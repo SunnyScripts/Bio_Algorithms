@@ -40,7 +40,7 @@ def main():
     proteinList = []
     for readingFrame in range(3):
         proteinList.extend(peptideChainToProteinList( rnaToPeptideChain( rnaSequence, readingFrame)))
-        proteinList.extend(peptideChainToProteinList( rnaToPeptideChain( rnaSequence, readingFrame)))
+        proteinList.extend(peptideChainToProteinList( rnaToPeptideChain( rnaReverseCompliment, readingFrame)))
 
     proteinList = sorted([protein for protein in proteinList if len(protein) > 0], key=len, reverse=True)
     print proteinList
